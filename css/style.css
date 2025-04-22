@@ -167,9 +167,12 @@ pre {
 /*=================================================================*/
 /*                      HEADER                              
 /*=================================================================*/
+
+
+
 header.left {
   color: #FFF;
-  background: #A31CA6;
+  background: #F72C5B;
   border-radius: 20px;
   min-height: 620px;
   max-height: 620px;
@@ -427,8 +430,14 @@ section {
   overflow: hidden;
   margin-top: 50px;
 }
+
+
+
+
+
+
 section.white-bg {
-  background: #BFAE99;
+  background: #C3FF93; 
 }
 section.padding {
   padding: 80px 50px;
@@ -938,7 +947,7 @@ section.padding-60 {
 /*=================================================================*/
 .overlay {
   border-radius: 20px;
-  background: #04D9D9;
+  background: #41C9E2;
   left: 0;
   top: 0;
   opacity: 0.9;
