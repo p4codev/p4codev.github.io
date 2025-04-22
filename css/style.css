@@ -306,7 +306,7 @@ header .copyright {
 }
 
 .mobile-header {
-  background: #A31CA6;
+  background: #F72C5B;
   border-radius: 20px;
   display: none;
   -webkit-transform: translateX(0);
@@ -437,7 +437,7 @@ section {
 
 
 section.white-bg {
-  background: #E6F0B6; 
+  background: linear-gradient(90deg, hsla(46, 73%, 75%, 1) 0%, hsla(176, 73%, 88%, 1) 100%);
 }
 section.padding {
   padding: 80px 50px;
@@ -1033,7 +1033,7 @@ section.padding-60 {
 
 .btn-default {
   color: #FFF;
-  background: #A6351C;
+  background: #F72C5B;
 }
 .btn-default:hover {
   background: #394759;
