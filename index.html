@@ -45,8 +45,7 @@
 
 
 
-<div class="cursor-dot">data-cursor-dot</div>
-<div class="cursor-outline">data-cursor-outline</div>
+
 
 
 
@@ -54,6 +53,10 @@
 
 <!-- site wrapper -->
 <div class="site-wrapper">
+
+
+	<div class="cursor-dot" data-cursor-dot></div>
+	<div class="cursor-outline" data-cursor-outline></div>
 
 	<!-- mobile header -->
 	<div class="mobile-header py-2 px-3 mt-4">
@@ -225,7 +228,7 @@
 				<!-- more button 
 				<div class="load-more text-center mt-4">
 					<a href="javascript:" class="btn btn-default"><iconify-icon icon="logos:react" width="20" height="20"></iconify-icon><i class="fas fa-circle-notch"></i> React</a>
-					<!-- numbered pagination (hidden for infinite scroll)
+					<-- numbered pagination (hidden for infinite scroll)
 					<ul class="portfolio-pagination list-inline d-none">
 						<li class="list-inline-item">1</li>
 						<li class="list-inline-item"><a href="works-2.html">2</a></li>
@@ -872,35 +875,7 @@
 <!-- Go to top button -->
 <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
 
-<script>
-
-const cursorDot =document.querySelector("[data-cursor-dot]");
-const cursorOutline =document.querySelector("[data-cursor-outline]");
-
-window.addEventListener("mousemove", function (e) {
-
-    const posX = e.clientX;
-    const posY = e.clientY;
-
-    cursorDot.style.left = `${posX}px`;
-    cursorDot.style.top = `${posY}px`;
-
-    //cursorOutline.style.left = '${posX}px';
-    //cursorOutline.style.top = '${posY}px';
-
-	cursorOutline.animate({
-		left: `${posX}px`,
-		top: `${posY}px`
-	},{duration: 500, fill: "forwards" });
-});
-
-
-</script>
-
-
-
-
-
+<script src="js/cursor.js"></script>
 <script src="js/jquery-1.12.3.min.js"></script>
 <script src="js/jquery.easing.min.js"></script>
 <script src="js/popper.min.js"></script>
