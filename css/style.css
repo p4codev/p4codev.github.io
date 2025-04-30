@@ -480,7 +480,7 @@ section {
 
 
 section.white-bg {
-  background: linear-gradient(90deg, hsla(46, 73%, 75%, 1) 0%, hsla(176, 73%, 88%, 1) 100%);
+  background: #7bf688;
 }
 section.padding {
   padding: 80px 50px;
