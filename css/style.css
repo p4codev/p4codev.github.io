@@ -29,7 +29,7 @@ Colores Principales
 /*=================================================================*/
 body {
   color: #141C26;
-  background-color: #141C26;
+  background-color:  #141C26;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 1.7;
@@ -43,13 +43,13 @@ body {
 .cursor-dot{
   width: 15px;
   height: 15px;
-  background-color: red;  
+  background-color: #FF7F11;  
 }
 
 .cursor-outline{
   width: 40px;
   height: 40px;
-  border: 3px solid hsla(0, 81%, 47%, 0.5);
+  border: 3px solid hsla(34, 90%, 47%, 0.808);
 }
 
 .cursor-dot, .cursor-outline{
@@ -990,7 +990,7 @@ section.padding-60 {
 /*=================================================================*/
 .overlay {
   border-radius: 20px;
-  background: #41C9E2;
+  background: #4DA1A9;
   left: 0;
   top: 0;
   opacity: 0.9;
@@ -1003,7 +1003,7 @@ section.padding-60 {
   font-size: 24px;
   color: #FFF;
   display: inline-block;
-  background: #A6351C;
+  background: #FF7F11;
   border-radius: 50%;
   height: 50px;
   line-height: 50px;
@@ -1076,7 +1076,7 @@ section.padding-60 {
 
 .btn-default {
   color: #FFF;
-  background: #F72C5B;
+  background: #FF7F11;
 }
 .btn-default:hover {
   background: #394759;
@@ -1191,7 +1191,7 @@ section.padding-60 {
   display: inline-block;
   position: absolute;
   top: 0;
-  background-color: #A6351C;
+  background-color: #FF7F11;
   border-radius: 100%;
   -webkit-animation: sk-bounce 2s infinite ease-in-out;
   animation: sk-bounce 2s infinite ease-in-out;
@@ -1390,7 +1390,7 @@ section.padding-60 {
   line-height: 3px;
   color: #fff;
   text-align: center;
-  background-color: #A6351C;
+  background-color: #F72B5B;
   -webkit-box-shadow: none;
   box-shadow: none;
   -webkit-transition: width 0.6s ease;
@@ -1406,7 +1406,7 @@ section.padding-60 {
 }
 .social-icons li a {
   color: #FFF;
-  background: #A6351C;
+  background: #FF7F11;
   border-radius: 50%;
   display: block;
   height: 30px;
@@ -1415,7 +1415,7 @@ section.padding-60 {
   width: 30px;
 }
 .social-icons li a:hover {
-  color: #A6351C;
+  color: #FF7F11;
   background: #FFF;
 }
 
@@ -1457,7 +1457,7 @@ section.padding-60 {
 }
 
 #return-to-top:hover {
-  background: #A6351C;
+  background: #F72B5B;
 }
 
 .videoWrapper {
