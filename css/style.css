@@ -72,6 +72,37 @@ img {
   background: #A31CA6;
 }
 
+
+
+.cursor {
+  left: 0;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #f44336;
+  position: absolute;
+  border-radius: 5px;
+}
+
+.cursor__follower {
+  transition: transform .4s;
+  width: 6px;
+  height: 6px;
+}
+
+/* Unrelated styles */
+html {
+  cursor: none;
+}
+
+
+
+
+
+
+
+
+
 /*=================================================================*/
 /*                      TYPOGRAPHY                              
 /*=================================================================*/
