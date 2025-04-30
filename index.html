@@ -45,6 +45,11 @@
 
 
 
+<div class="cursor-dot">data-cursor-dot</div>
+<div class="cursor-outline">data-cursor-outline</div>
+
+
+
 
 
 <!-- site wrapper -->
@@ -867,31 +872,30 @@
 <!-- Go to top button -->
 <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
 
-<!-- SCRIPTS -->
 <script>
-	const root = document.querySelector('html')
 
-// Real cursor element
-const cursor = document.createElement('div')
-cursor.classList.add('cursor')
-root.appendChild(cursor)
+const cursorDot =document.querySelector("[data-cursor-dot]");
+const cursorOutline =document.querySelector("[data-cursor-outline]");
 
-// Following extra cursor element
-const follower = document.createElement('div')
-follower.classList.add('cursor', 'cursor__follower')
-root.appendChild(follower)
+window.addEventListener("mousemove", function (e) {
 
+    const posX = e.clientX;
+    const posY = e.clientY;
 
-root.addEventListener('mousemove', (e) => {
-setPosition(follower, e)
-setPosition(cursor, e)
-})
+    cursorDot.style.left = '${posX}px';
+    cursorDot.style.top = '${posY}px';
 
-function setPosition(element, e) {
-element.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`
-}
+    cursorOutline.style.left = '${posX}px';
+    cursorOutline.style.top = '${posY}px';
+});
+
 
 </script>
+
+
+
+
+
 <script src="js/jquery-1.12.3.min.js"></script>
 <script src="js/jquery.easing.min.js"></script>
 <script src="js/popper.min.js"></script>

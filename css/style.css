@@ -34,7 +34,36 @@ body {
   font-size: 14px;
   line-height: 1.7;
   overflow-x: hidden;
+
+
+  cursor: none;
+  
 }
+
+.cursor-dot{
+  width: 5px;
+  height: 5px;
+  background-color: white;  
+}
+
+.cursor-outline{
+  width: 30px;
+  height: 30px;
+  border: 2px solid hsla(0, 0%, 100%, 0.5);
+}
+
+.cursor-dot, .cursor-outline{
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+
 
 img {
   max-width: 100%;
@@ -74,26 +103,9 @@ img {
 
 
 
-.cursor {
-  left: 0;
-  top: 0;
-  width: 10px;
-  height: 10px;
-  background-color: #f44336;
-  position: absolute;
-  border-radius: 5px;
-}
 
-.cursor__follower {
-  transition: transform .4s;
-  width: 6px;
-  height: 6px;
-}
 
-/* Unrelated styles */
-html {
-  cursor: none;
-}
+
 
 
 
