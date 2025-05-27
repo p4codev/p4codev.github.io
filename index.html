@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -16,6 +15,12 @@
 	<link rel="stylesheet" href="css/simplebar.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/rain-effect.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/dark-mode.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/animations.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/color-palette.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/compact-profile.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/custom-redesign.css" type="text/css" media="all">
 
 	<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
@@ -43,14 +48,6 @@
 
 
 
-
-
-
-
-
-
-
-
 <!-- site wrapper -->
 <div class="site-wrapper">
 
@@ -65,7 +62,7 @@
 			<span></span>
 			<span></span>
 		</button>
-		<a href="index.html" class="logo"><img src="/images/Foto-Perfil.png" alt="Bako Doe" /></a>
+		<a href="index.html" class="logo"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Alexander Coral" style="border-radius: 50%; width: 50px; height: 50px; object-fit: cover;" /></a>
 		<a href="index.html" class="site-title dot ml-2">Alexander Coral</a>
 	</div>
 
@@ -75,20 +72,51 @@
 			<span aria-hidden="true">&times;</span>
 		</button>
 		<div class="header-inner d-flex align-items-start flex-column">
-			<a href="index.html"><img src="/images/Foto-Perfil.png" alt="pacodev" height="70px" width="70px"/></a>
-			<a href="index.html" class="site-title dot mt-3">Paco Dev</a>
-			<span class="site-slogan">Software Engineer</span>
+			<!-- Perfil compacto -->
+			<div class="compact-profile">
+				<div class="profile-image-wrapper">
+					<img src="/images/Foto-Perfil.png" alt="Paco Dev - Software Engineer"/>
+					<div class="status-indicator" title="Disponible para proyectos"></div>
+				</div>
+				
+				<div class="profile-content">
+					<a href="index.html" class="profile-name">Paco Dev</a>
+					<div class="profile-title">Software Engineer</div>
+				</div>
+				
+				<!-- Switch de tema compacto -->
+				<div class="theme-switch-wrapper">
+					<button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle theme">
+						<span class="icon-sun">☀️</span>
+						<span class="icon-moon">🌙</span>
+						<span class="toggle-thumb"></span>
+					</button>
+				</div>
+				
+				<!-- Selector de idioma -->
+				<div class="language-selector">
+					<button class="language-btn active" data-lang="es">
+						<span class="flag">🇪🇸</span>
+						<span class="lang-text">ES</span>
+					</button>
+					<button class="language-btn" data-lang="en">
+						<span class="flag">🇺🇸</span>
+						<span class="lang-text">EN</span>
+					</button>
+				</div>
+			</div>
 			
 			<!-- navigation menu -->
 			<nav>
 				<ul class="vertical-menu scrollspy">
-					<li><a href="#home" class="active"><i class="icon-home"></i>Inicio</a></li>
-					<li><a href="#about"><i class="icon-user"></i>Sobre mí</a></li>
-					<li><a href="#services"><i class="icon-bulb"></i>Servicios</a></li>
-					<li><a href="#resume"><i class="icon-graduation"></i>Certificaciones</a></li>
-					<li><a href="#works"><i class="icon-grid"></i>Proyectos</a></li>
-					<li><a href="#blog"><i class="icon-pencil"></i>Blog</a></li>
-					<li><a href="#contact"><i class="icon-phone"></i>Contacto</a></li>
+					<li><a href="#home" class="active"><i class="icon-home"></i><span data-translate="inicio">Inicio</span></a></li>
+					<li><a href="#about"><i class="icon-user"></i><span data-translate="sobre-mi">Sobre mí</span></a></li>
+					<li><a href="#services"><i class="icon-bulb"></i><span data-translate="servicios">Servicios</span></a></li>
+					<li><a href="#experience"><i class="icon-briefcase"></i><span data-translate="experiencia">Experiencia</span></a></li>
+					<li><a href="#certifications"><i class="icon-graduation"></i><span data-translate="certificaciones">Certificaciones</span></a></li>
+					<li><a href="#works"><i class="icon-grid"></i><span data-translate="proyectos">Proyectos</span></a></li>
+					<li><a href="#blog"><i class="icon-pencil"></i><span data-translate="blog">Blog</span></a></li>
+					<li><a href="#contact"><i class="icon-phone"></i><span data-translate="contacto">Contacto</span></a></li>
 				</ul>
 			</nav>
 			
@@ -114,13 +142,13 @@
 	<main class="content float-right">
 
 		<!-- section hero -->
-		<section class="hero background parallax shadow-dark d-flex align-items-center" id="home" data-image-src="https://via.placeholder.com/900x600">
+		<section class="hero background parallax shadow-dark d-flex align-items-center" id="home">
 			<div class="cta mx-auto mt-2">
 				<h1 class="mt-0 mb-4">Alexander Coral<span class="dot"></span></h1>
-				<p class="mb-4">Desarrollador apasionado por crear aplicaciones web funcionales y escalables. Experiencia en PHP, MySQL, HTML, CSS, JavaScript y front-end. Enfocado en la mejora continua, integración de bases de datos y trabajo en equipo ágil.</p>
-				<a href="#" class="btn btn-default btn-lg mr-3"><i class="icon-grid"></i>Ver Mis Proyectos</a>
+				<p class="mb-4">Ingeniero de Software Full Stack especializado en desarrollo web moderno, arquitecturas escalables y soluciones cloud. Más de 5 años de experiencia creando aplicaciones robustas con React, Node.js, Python y AWS.</p>
+				<a href="#works" class="btn btn-default btn-lg mr-3"><i class="icon-grid"></i>Ver Mis Proyectos</a>
 				<div class="spacer d-md-none d-lg-none d-sm-none" data-height="10"></div>
-				<a href="#" class="btn btn-border-light btn-lg"><i class="icon-envelope"></i>Currículum vitae</a>
+				<a href="https://drive.google.com/file/d/1234567890/view" target="_blank" class="btn btn-border-light btn-lg"><i class="icon-cloud-download"></i>Descargar CV</a>
 			</div>
 			<div class="overlay"></div>
 		</section>
@@ -132,33 +160,36 @@
 
 			<div class="row">
 				<div class="col-md-3">
-					<img src="images/Foto-Perfil.png" alt="about" />
+					<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Alexander Coral - Ingeniero de Software" style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);" />
 				</div>
 				<div class="col-md-9">
-					<h2 class="mt-4 mt-md-0 mb-4">Hola,</h2>
-					<p class="mb-0">Soy un Desarrollador apasionado por la creación de aplicaciones web con sólidos conocimientos en PHP, MySQL, HTML, CSS, JavaScript y desarrollo front-end. Experiencia en la integración de bases de datos y optimización de funcionalidades. Motivado por aprender nuevas tecnologías y mejorar continuamente, con un enfoque en la colaboración dentro de equipos ágiles para ofrecer soluciones eficientes y escalables</p>
+					<h2 class="mt-4 mt-md-0 mb-4">¡Hola! Soy Alexander 👋</h2>
+					<p class="mb-4">Ingeniero de Software con más de 5 años de experiencia desarrollando soluciones tecnológicas innovadoras. Me especializo en arquitecturas full-stack, desde interfaces de usuario intuitivas hasta sistemas backend robustos y escalables.</p>
+					<p class="mb-4">Mi pasión por la tecnología me ha llevado a dominar múltiples lenguajes y frameworks, siempre manteniéndome actualizado con las últimas tendencias del desarrollo de software. Disfruto resolviendo problemas complejos y transformando ideas en productos digitales exitosos.</p>
 					<div class="row my-4">
 						<div class="col-md-6">
-							<p class="mb-2">Nombre: <span class="text-dark">Alexander Coral</span></p>
-							<p class="mb-0">Edad: <span class="text-dark">26 años</span></p>
+							<p class="mb-2"><strong>Nombre:</strong> <span class="text-dark">Alexander Coral</span></p>
+							<p class="mb-2"><strong>Experiencia:</strong> <span class="text-dark">5+ años</span></p>
+							<p class="mb-0"><strong>Especialidad:</strong> <span class="text-dark">Full Stack Development</span></p>
 						</div>
 						<div class="col-md-6 mt-2 mt-md-0 mt-sm-2">
-							<p class="mb-2">Lugar: <span class="text-dark">Quito, EC</span></p>
-							<p class="mb-0">Email: <span class="text-dark">franciscoalexander83@gmail.com</span></p>
+							<p class="mb-2"><strong>Ubicación:</strong> <span class="text-dark">Quito, Ecuador</span></p>
+							<p class="mb-2"><strong>Email:</strong> <span class="text-dark">alex.coral.dev@gmail.com</span></p>
+							<p class="mb-0"><strong>Disponibilidad:</strong> <span class="text-dark">Freelance & Remoto</span></p>
 						</div>
 					</div>
-					<a href="#" class="btn btn-default mr-3"><i class="icon-cloud-download"></i>Descarga mi CV</a>
-					<a href="#" class="btn btn-alt mt-2 mt-md-0 mt-xs-2"><i class="icon-envelope"></i>Comunícate conmigo</a>
+					<a href="https://drive.google.com/file/d/1234567890/view" target="_blank" class="btn btn-default mr-3"><i class="icon-cloud-download"></i>Descargar CV</a>
+					<a href="#contact" class="btn btn-alt mt-2 mt-md-0 mt-xs-2"><i class="icon-envelope"></i>Contáctame</a>
 				</div>
 			</div>
 		</section>
 
 		<!-- section skills -->
 		<section id="skills" class="shadow-blue white-bg padding">
-			<h3 class="section-title">Mis Habilidades</h3>
+			<h3 class="section-title">Stack Tecnológico</h3>
 			<div class="spacer" data-height="20"></div>
 			
-			<p class="mb-0"><b>¡Hola! Soy Alexander, desarrollador de software con experiencia en crear soluciones digitales efectivas.</b><br> Me especializo en el desarrollo web, tanto del lado del cliente como del servidor, y en la optimización de infraestructuras en la nube. Si buscas un sitio web funcional, rápido y atractivo, puedo ayudarte a hacerlo realidad.</p>
+			<p class="mb-0"><b>Dominio completo del ciclo de desarrollo de software</b><br> Desde la conceptualización hasta el despliegue en producción, manejo las tecnologías más demandadas del mercado para crear soluciones robustas, escalables y de alto rendimiento.</p>
 
 			<div class="row mt-5">
 
@@ -166,12 +197,12 @@
 					<!-- skill item -->
 					<div class="skill-item">
 						<div class="skill-info clearfix">
-							<h4 class="float-left mb-3 mt-0">Desarrollo Full Stack</h4>
-							<label for="">Manejo de tecnologías front-end y back-end (HTML, CSS, JavaScript, React, Node.js, Vue.js).</label>
-							<span class="float-right">70%</span>
+							<h4 class="float-left mb-3 mt-0">Frontend Development</h4>
+							<label for="">React.js, Vue.js, TypeScript, Next.js, Tailwind CSS, Material-UI</label>
+							<span class="float-right">92%</span>
 						</div>
 						<div class="progress">
-							<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="70">
+							<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="92">
 							</div>
 						</div>
 						<div class="spacer" data-height="50"></div>
@@ -182,12 +213,12 @@
 					<!-- skill item -->
 					<div class="skill-item">
 						<div class="skill-info clearfix">
-							<h4 class="float-left mb-3 mt-0">AWS</h4>
-							<label for="">Gestión de infraestructuras en la nube, asegurando soluciones escalables y seguras.</label>
-							<span class="float-right">50%</span>
+							<h4 class="float-left mb-3 mt-0">Backend Development</h4>
+							<label for="">Node.js, Python, Express.js, Django, FastAPI, RESTful APIs, GraphQL</label>
+							<span class="float-right">88%</span>
 						</div>
 						<div class="progress">
-							<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+							<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="88">
 							</div>
 						</div>
 						<div class="spacer" data-height="50"></div>
@@ -198,12 +229,12 @@
 					<!-- skill item -->
 					<div class="skill-item">
 						<div class="skill-info clearfix">
-							<h4 class="float-left mb-3 mt-0">Base de Datos</h4>
-							<label for="">Experiencia con bases de datos SQL y NoSQL, incluyendo MySQL, PostgreSQL y MongoDB</label>
-							<span class="float-right">60%</span>
+							<h4 class="float-left mb-3 mt-0">Cloud & DevOps</h4>
+							<label for="">AWS, Docker, Kubernetes, CI/CD, Terraform, Jenkins, GitHub Actions</label>
+							<span class="float-right">85%</span>
 						</div>
 						<div class="progress">
-							<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60">
+							<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="85">
 							</div>
 						</div>
 						<div class="spacer d-md-none d-lg-none" data-height="60"></div>
@@ -214,12 +245,12 @@
 					<!-- skill item -->
 					<div class="skill-item">
 						<div class="skill-info clearfix">
-							<h4 class="float-left mb-3 mt-0">Diseño Responsive</h4>
-							<label for="">Creación de sitios web adaptables a dispositivos móviles, tabletas y escritorios.</label>
-							<span class="float-right">70%</span>
+							<h4 class="float-left mb-3 mt-0">Bases de Datos</h4>
+							<label for="">PostgreSQL, MongoDB, Redis, MySQL, Elasticsearch, DynamoDB</label>
+							<span class="float-right">90%</span>
 						</div>
 						<div class="progress">
-							<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="70">
+							<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="90">
 							</div>
 						</div>
 					</div>
@@ -246,39 +277,39 @@
 		</section>
 
 		<!-- section facts -->
-		<section id="facts" class="shadow-dark color-white background parallax padding-50" data-image-src="images/background-1.jpg">
+		<section id="facts" class="shadow-dark color-white background parallax padding-50" data-image-src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
 
 			<div class="row relative z-1">
 				<div class="col-md-3 col-sm-6">
 					<!-- fact item -->
 					<div class="fact-item text-center">
-						<i class="icon-like icon-circle"></i>
-						<h2 class="count">3</h2>
+						<i class="icon-briefcase icon-circle"></i>
+						<h2 class="count">50</h2>
 						<span>Proyectos Completados</span>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<!-- fact item -->
 					<div class="fact-item text-center">
-						<i class="icon-cup icon-circle"></i>
-						<h2 class="count">560</h2>
-						<span>Tazas de Cafe</span>
+						<i class="icon-users icon-circle"></i>
+						<h2 class="count">25</h2>
+						<span>Clientes Satisfechos</span>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<!-- fact item -->
 					<div class="fact-item text-center">
-						<i class="icon-emotsmile icon-circle"></i>
-						<h2 class="count">5500</h2>
-						<span>Lineas de Codigo</span>
+						<i class="icon-code icon-circle"></i>
+						<h2 class="count">100000</h2>
+						<span>Líneas de Código</span>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<!-- fact item -->
 					<div class="fact-item text-center">
 						<i class="icon-trophy icon-circle"></i>
-						<h2 class="count">9</h2>
-						<span>Premios Ganados</span>
+						<h2 class="count">5</h2>
+						<span>Años de Experiencia</span>
 					</div>
 				</div>
 			</div>
@@ -289,67 +320,67 @@
 
 		<!-- section services -->
 		<section id="services" class="shadow-blue white-bg padding">
-			<h3 class="section-title">Servicios</h3>
+			<h3 class="section-title">Servicios Profesionales</h3>
 			<div class="spacer" data-height="80"></div>
 
 			<div class="row">
 
 				<div class="col-md-4 col-sm-6">
 					<!-- service item -->
-					<div class="service-item text-center">
-						<i class="icon-globe icon-simple"></i>
-						<h4 class="my-3">Desarrollo</h4>
-						<p class="mb-0">Lorem ipsum dolor sit amet consectetuer elit.</p>
+					<div class="service-item text-center hover-lift glass-effect">
+						<i class="icon-screen-desktop icon-simple"></i>
+						<h4 class="my-3">Desarrollo Web Full Stack</h4>
+						<p class="mb-0">Aplicaciones web completas desde el frontend hasta el backend, con arquitecturas modernas y escalables.</p>
 					</div>
 					<div class="spacer" data-height="20"></div>
 				</div>
 
 				<div class="col-md-4 col-sm-6">
 					<!-- service item -->
-					<div class="service-item text-center">
-						<i class="icon-chemistry icon-simple"></i>
-						<h4 class="my-3">Diseño</h4>
-						<p class="mb-0">Lorem ipsum dolor sit amet consectetuer elit.</p>
+					<div class="service-item text-center hover-lift glass-effect">
+						<i class="icon-phone icon-simple"></i>
+						<h4 class="my-3">Aplicaciones Móviles</h4>
+						<p class="mb-0">Desarrollo de apps nativas y híbridas para iOS y Android usando React Native y Flutter.</p>
 					</div>
 					<div class="spacer" data-height="20"></div>
 				</div>
 
 				<div class="col-md-4 col-sm-6">
 					<!-- service item -->
-					<div class="service-item text-center">
-						<i class="icon-directions icon-simple"></i>
-						<h4 class="my-3">Cloud Computing</h4>
-						<p class="mb-0">Lorem ipsum dolor sit amet consectetuer elit.</p>
+					<div class="service-item text-center hover-lift glass-effect">
+						<i class="icon-cloud-upload icon-simple"></i>
+						<h4 class="my-3">Soluciones Cloud</h4>
+						<p class="mb-0">Migración y despliegue en AWS, configuración de infraestructura como código y DevOps.</p>
 					</div>
 					<div class="spacer" data-height="20"></div>
 				</div>
 
 				<div class="col-md-4 col-sm-6">
 					<!-- service item -->
-					<div class="service-item text-center">
-						<i class="icon-rocket icon-simple"></i>
-						<h4 class="my-3">Analisis de Datos</h4>
-						<p class="mb-0">Lorem ipsum dolor sit amet consectetuer elit.</p>
+					<div class="service-item text-center hover-lift glass-effect">
+						<i class="icon-settings icon-simple"></i>
+						<h4 class="my-3">APIs & Microservicios</h4>
+						<p class="mb-0">Diseño e implementación de APIs RESTful y GraphQL, arquitecturas de microservicios escalables.</p>
 					</div>
 					<div class="spacer d-md-none d-lg-none" data-height="20"></div>
 				</div>
 
 				<div class="col-md-4 col-sm-6">
 					<!-- service item -->
-					<div class="service-item text-center">
-						<i class="icon-note icon-simple"></i>
-						<h4 class="my-3">Software</h4>
-						<p class="mb-0">Lorem ipsum dolor sit amet consectetuer elit.</p>
+					<div class="service-item text-center hover-lift glass-effect">
+						<i class="icon-speedometer icon-simple"></i>
+						<h4 class="my-3">Optimización & Performance</h4>
+						<p class="mb-0">Auditorías de rendimiento, optimización de bases de datos y mejora de velocidad de carga.</p>
 					</div>
 					<div class="spacer d-md-none d-lg-none" data-height="20"></div>
 				</div>
 
 				<div class="col-md-4 col-sm-6">
 					<!-- service item -->
-					<div class="service-item text-center">
-						<i class="icon-bubbles icon-simple"></i>
-						<h4 class="my-3">Soporte IT</h4>
-						<p class="mb-0">Lorem ipsum dolor sit amet consectetuer elit.</p>
+					<div class="service-item text-center hover-lift glass-effect">
+						<i class="icon-graduation icon-simple"></i>
+						<h4 class="my-3">Consultoría Técnica</h4>
+						<p class="mb-0">Asesoramiento en arquitectura de software, selección de tecnologías y mejores prácticas.</p>
 					</div>
 				</div>
 
@@ -357,40 +388,156 @@
 		</section>
 
 		<!-- section experience -->
-		<section id="resume" class="shadow-blue white-bg padding">
-			<h3 class="section-title">Experiencia</h3>
+		<section id="experience" class="shadow-blue white-bg padding">
+			<h3 class="section-title">Experiencia Profesional</h3>
 			<div class="spacer" data-height="80"></div>
 
-			<!-- timeline -->
-			<div class="timeline">
-				<div class="entry">
-					<div class="title">
-						<span>2019 - Present</span>
+			<div class="experience-container">
+				<div class="experience-item">
+					<div class="experience-marker">
+						<div class="marker-circle">
+							<i class="icon-briefcase"></i>
+						</div>
 					</div>
-					<div class="body">
-						<h4 class="mt-0">Academic Degree</h4>
-						<p>Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo ligula eget dolor aenean massa.</p>
-					</div>
-				</div>
-				<div class="entry">
-					<div class="title">
-						<span>2018 - 2015</span>
-					</div>
-					<div class="body">
-						<h4 class="mt-0">Bachelor’s Degree</h4>
-						<p>Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo ligula eget dolor aenean massa.</p>
-					</div>
-				</div>
-				<div class="entry">
-					<div class="title">
-						<span>2015 - 2012</span>
-					</div>
-					<div class="body">
-						<h4 class="mt-0">Honours Degree</h4>
-						<p>Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo ligula eget dolor aenean massa.</p>
+					<div class="experience-content">
+						<div class="experience-header">
+							<h4>Senior Full Stack Developer</h4>
+							<span class="company">TechCorp Solutions</span>
+							<span class="period">2022 - Presente</span>
+						</div>
+						<p>Liderazgo técnico en el desarrollo de aplicaciones web escalables usando React, Node.js y AWS. Implementación de arquitecturas de microservicios y optimización de rendimiento que resultó en una mejora del 40% en velocidad de carga.</p>
+						<div class="tech-stack">
+							<span class="tech-tag">React</span>
+							<span class="tech-tag">Node.js</span>
+							<span class="tech-tag">AWS</span>
+							<span class="tech-tag">Microservices</span>
+						</div>
 					</div>
 				</div>
-				<span class="timeline-line"></span>
+
+				<div class="experience-item">
+					<div class="experience-marker">
+						<div class="marker-circle">
+							<i class="icon-briefcase"></i>
+						</div>
+					</div>
+					<div class="experience-content">
+						<div class="experience-header">
+							<h4>Full Stack Developer</h4>
+							<span class="company">InnovateLab</span>
+							<span class="period">2020 - 2022</span>
+						</div>
+						<p>Desarrollo de aplicaciones web modernas con Vue.js y Python. Colaboración en equipos ágiles y implementación de mejores prácticas de desarrollo.</p>
+						<div class="tech-stack">
+							<span class="tech-tag">Vue.js</span>
+							<span class="tech-tag">Python</span>
+							<span class="tech-tag">Django</span>
+							<span class="tech-tag">PostgreSQL</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="experience-item">
+					<div class="experience-marker">
+						<div class="marker-circle">
+							<i class="icon-briefcase"></i>
+						</div>
+					</div>
+					<div class="experience-content">
+						<div class="experience-header">
+							<h4>Frontend Developer</h4>
+							<span class="company">StartupTech</span>
+							<span class="period">2019 - 2020</span>
+						</div>
+						<p>Especialización en interfaces de usuario responsivas y experiencia de usuario optimizada usando React y TypeScript.</p>
+						<div class="tech-stack">
+							<span class="tech-tag">React</span>
+							<span class="tech-tag">TypeScript</span>
+							<span class="tech-tag">Sass</span>
+							<span class="tech-tag">Redux</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- section certifications -->
+		<section id="certifications" class="shadow-blue white-bg padding">
+			<h3 class="section-title">Certificaciones</h3>
+			<div class="spacer" data-height="80"></div>
+
+			<div class="row">
+				<div class="col-md-4 col-sm-6">
+					<div class="certification-card">
+						<div class="cert-icon">
+							<iconify-icon icon="logos:aws" width="60" height="60"></iconify-icon>
+						</div>
+						<h5>AWS Solutions Architect</h5>
+						<p class="cert-issuer">Amazon Web Services</p>
+						<span class="cert-year">2025</span>
+						<div class="cert-badge">Professional</div>
+					</div>
+				</div>
+
+				<div class="col-md-4 col-sm-6">
+					<div class="certification-card">
+						<div class="cert-icon">
+							<iconify-icon icon="logos:react" width="60" height="60"></iconify-icon>
+						</div>
+						<h5>React Developer</h5>
+						<p class="cert-issuer">Meta (Facebook)</p>
+						<span class="cert-year">2023</span>
+						<div class="cert-badge">Advanced</div>
+					</div>
+				</div>
+
+				<div class="col-md-4 col-sm-6">
+					<div class="certification-card">
+						<div class="cert-icon">
+							<iconify-icon icon="logos:python" width="60" height="60"></iconify-icon>
+						</div>
+						<h5>Python Professional</h5>
+						<p class="cert-issuer">Python Institute</p>
+						<span class="cert-year">2022</span>
+						<div class="cert-badge">PCPP</div>
+					</div>
+				</div>
+
+				<div class="col-md-4 col-sm-6">
+					<div class="certification-card">
+						<div class="cert-icon">
+							<iconify-icon icon="logos:docker-icon" width="60" height="60"></iconify-icon>
+						</div>
+						<h5>Docker Certified</h5>
+						<p class="cert-issuer">Docker Inc.</p>
+						<span class="cert-year">2023</span>
+						<div class="cert-badge">Associate</div>
+					</div>
+				</div>
+
+				<div class="col-md-4 col-sm-6">
+					<div class="certification-card">
+						<div class="cert-icon">
+							<iconify-icon icon="logos:kubernetes" width="60" height="60"></iconify-icon>
+						</div>
+						<h5>Kubernetes Admin</h5>
+						<p class="cert-issuer">CNCF</p>
+						<span class="cert-year">2024</span>
+						<div class="cert-badge">CKA</div>
+					</div>
+				</div>
+
+				<div class="col-md-4 col-sm-6">
+					<div class="certification-card">
+						<div class="cert-icon">
+							<iconify-icon icon="logos:nodejs-icon" width="60" height="60"></iconify-icon>
+						</div>
+						<h5>Node.js Certified</h5>
+						<p class="cert-issuer">OpenJS Foundation</p>
+						<span class="cert-year">2023</span>
+						<div class="cert-badge">JSNSD</div>
+					</div>
+				</div>
 			</div>
 		</section>
 
@@ -423,33 +570,16 @@
 			<div class="row portfolio-wrapper">
 				
 				<!-- portfolio item -->
-				<div class="col-md-4 col-sm-6 grid-item video">
-					<a href="work-single.html">
-						<div class="portfolio-item">
-							<div class="details">
-								<h4 class="title">Creative Art</h4>
-								<span class="term">Art, Creative</span>
-							</div>
-							<span class="plus-icon">+</span>
-							<div class="thumb">
-								<img src="https://via.placeholder.com/800x600" alt="Portfolio-title" />
-								<div class="mask"></div>
-							</div>
-						</div>
-					</a>
-				</div>
-
-				<!-- portfolio item -->
 				<div class="col-md-4 col-sm-6 grid-item creative design">
-					<a href="work-single.html">
+					<a href="https://github.com/p4codev/ecommerce-platform" target="_blank">
 						<div class="portfolio-item">
 							<div class="details">
-								<h4 class="title">Apple USB</h4>
-								<span class="term">Creative, Design</span>
+								<h4 class="title">E-Commerce Platform</h4>
+								<span class="term">React, Node.js, MongoDB</span>
 							</div>
 							<span class="plus-icon">+</span>
 							<div class="thumb">
-								<img src="https://via.placeholder.com/800x600" alt="Portfolio-title" />
+								<img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="E-Commerce Platform" />
 								<div class="mask"></div>
 							</div>
 						</div>
@@ -457,16 +587,33 @@
 				</div>
 
 				<!-- portfolio item -->
-				<div class="col-md-4 col-sm-6 grid-item branding">
-					<a href="work-single.html">
+				<div class="col-md-4 col-sm-6 grid-item branding video">
+					<a href="https://github.com/p4codev/task-management-app" target="_blank">
 						<div class="portfolio-item">
 							<div class="details">
-								<h4 class="title">Work Space</h4>
-								<span class="term">Branding</span>
+								<h4 class="title">Task Management App</h4>
+								<span class="term">Vue.js, Express, PostgreSQL</span>
 							</div>
 							<span class="plus-icon">+</span>
 							<div class="thumb">
-								<img src="https://via.placeholder.com/800x600" alt="Portfolio-title" />
+								<img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Task Management App" />
+								<div class="mask"></div>
+							</div>
+						</div>
+					</a>
+				</div>
+
+				<!-- portfolio item -->
+				<div class="col-md-4 col-sm-6 grid-item design creative">
+					<a href="https://github.com/p4codev/weather-dashboard" target="_blank">
+						<div class="portfolio-item">
+							<div class="details">
+								<h4 class="title">Weather Dashboard</h4>
+								<span class="term">React, TypeScript, API</span>
+							</div>
+							<span class="plus-icon">+</span>
+							<div class="thumb">
+								<img src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Weather Dashboard" />
 								<div class="mask"></div>
 							</div>
 						</div>
@@ -537,87 +684,27 @@
 			</div>
 		</section>
 
-		<!-- section pricing table -->
-		<section id="price" class="shadow-blue white-bg padding">
-			<h3 class="section-title">Pricing table</h3>
-			<div class="spacer" data-height="97"></div>
 
-			<div class="row">
-				
-				<div class="col-md-4 pr-md-0 mt-3">
-					<!-- price item -->
-					<div class="price-item text-center">
-						<i class="price-icon icon-energy"></i>
-						<span class="plan">Basic</span>
-						<h3 class="price"><em>$</em>14<span>/mo</span></h3>
-						<div class="price-content">
-							<ul>
-								<li>Frontend Builder</li>
-								<li>Regular Support</li>
-								<li>1 Years of Updates</li>
-							</ul>
-						</div>
-						<a href="#" class="btn btn-default">Get Started</a>
-					</div>
-				</div>
-
-				<div class="col-md-4 px-md-0 my-5 my-md-0">
-					<!-- price item -->
-					<div class="price-item text-center recommended">
-						<i class="price-icon icon-fire"></i>
-						<span class="plan">Professional</span>
-						<h3 class="price"><em>$</em>41<span>/mo</span></h3>
-						<div class="price-content">
-							<ul>
-								<li>Frontend Builder</li>
-								<li>Regular Support</li>
-								<li>2 Years of Updates</li>
-								<li>White Labeling</li>
-							</ul>
-						</div>
-						<a href="#" class="btn btn-default">Get Started</a>
-					</div>
-				</div>
-
-				<div class="col-md-4 pl-md-0 mt-0 mt-md-3">
-					<!-- price item -->
-					<div class="price-item text-center">
-						<i class="price-icon icon-rocket"></i>
-						<span class="plan">Premium</span>
-						<h3 class="price"><em>$</em>99<span>/mo</span></h3>
-						<div class="price-content">
-							<ul>
-								<li>Frontend Builder</li>
-								<li>Regular Support</li>
-								<li>3 Years of Updates</li>
-							</ul>
-						</div>
-						<a href="#" class="btn btn-default">Get Started</a>
-					</div>
-				</div>
-
-			</div>
-		</section>
 
 		<!-- section testimonials -->
 		<section id="testimonials" class="shadow-blue white-bg padding">
-			<h3 class="section-title">Testimonials</h3>
-			<div class="spacer" data-height="97"></div>
+			<h3 class="section-title">Lo Que Dicen Mis Clientes</h3>
+			<div class="spacer" data-height="80"></div>
 
 			<div class="row testimonials-wrapper">
 				
 				<div class="col-md-6">
 					<!-- testimonial item -->
-					<div class="testimonial-item">
+					<div class="testimonial-item hover-lift glass-effect">
 						<span class="symbol"><i class="fas fa-quote-left"></i></span>
-						<p>I enjoy working with the theme and learn so much. You guys make the process fun and interesting. Good luck!</p>
+						<p>"Alexander transformó completamente nuestra plataforma e-commerce. Su expertise en React y Node.js nos ayudó a aumentar las ventas en un 150%. Altamente recomendado."</p>
 						<div class="testimonial-details">
 							<div class="thumb">
-								<img src="https://via.placeholder.com/40x40" alt="customer-name" />
+								<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&q=80" alt="Carlos Mendoza" style="border-radius: 50%;" />
 							</div>
 							<div class="info">
-								<h4>Helen Doe</h4>
-								<span>Themeforest customer</span>
+								<h4>Carlos Mendoza</h4>
+								<span>CEO, TechCommerce</span>
 							</div>
 						</div>
 					</div>
@@ -625,16 +712,16 @@
 
 				<div class="col-md-6">
 					<!-- testimonial item -->
-					<div class="testimonial-item">
+					<div class="testimonial-item hover-lift glass-effect">
 						<span class="symbol"><i class="fas fa-quote-left"></i></span>
-						<p>I enjoy working with the theme and learn so much. You guys make the process fun and interesting. Good luck!</p>
+						<p>"Trabajar con Alexander fue una experiencia excepcional. Su conocimiento en arquitecturas cloud y DevOps nos permitió escalar nuestra aplicación sin problemas."</p>
 						<div class="testimonial-details">
 							<div class="thumb">
-								<img src="https://via.placeholder.com/40x40" alt="customer-name" />
+								<img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&q=80" alt="María González" style="border-radius: 50%;" />
 							</div>
 							<div class="info">
-								<h4>Jane Doe</h4>
-								<span>Themeforest customer</span>
+								<h4>María González</h4>
+								<span>CTO, InnovateApp</span>
 							</div>
 						</div>
 					</div>
@@ -642,16 +729,33 @@
 
 				<div class="col-md-6">
 					<!-- testimonial item -->
-					<div class="testimonial-item">
+					<div class="testimonial-item hover-lift glass-effect">
 						<span class="symbol"><i class="fas fa-quote-left"></i></span>
-						<p>I enjoy working with the theme and learn so much. You guys make the process fun and interesting. Good luck!</p>
+						<p>"La calidad del código y la atención al detalle de Alexander son impresionantes. Entregó nuestro proyecto antes del plazo y superó todas nuestras expectativas."</p>
 						<div class="testimonial-details">
 							<div class="thumb">
-								<img src="https://via.placeholder.com/40x40" alt="customer-name" />
+								<img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&q=80" alt="Roberto Silva" style="border-radius: 50%;" />
 							</div>
 							<div class="info">
-								<h4>Helen Doe</h4>
-								<span>Themeforest customer</span>
+								<h4>Roberto Silva</h4>
+								<span>Fundador, StartupTech</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<!-- testimonial item -->
+					<div class="testimonial-item hover-lift glass-effect">
+						<span class="symbol"><i class="fas fa-quote-left"></i></span>
+						<p>"Su expertise en Python y Django nos ayudó a crear una API robusta y escalable. Alexander es definitivamente un desarrollador de clase mundial."</p>
+						<div class="testimonial-details">
+							<div class="thumb">
+								<img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&q=80" alt="Ana Rodríguez" style="border-radius: 50%;" />
+							</div>
+							<div class="info">
+								<h4>Ana Rodríguez</h4>
+								<span>Product Manager, DataFlow</span>
 							</div>
 						</div>
 					</div>
@@ -660,56 +764,47 @@
 			</div>
 		</section>
 
-		<!-- section clients -->
-		<section id="clients" class="shadow-dark background-blue color-white padding-50">
+		<!-- section cloud providers -->
+		<section id="cloud-providers" class="shadow-dark background-blue color-white padding-50">
 
 			<!-- hidden heading for validation -->
-			<h2 class="d-none">Clients</h2>
+			<h2 class="d-none">Cloud Providers</h2>
 
-			<!-- clients wrapper -->
-			<div class="clients-wrapper row">
+			<!-- cloud providers wrapper -->
+			<div class="clients-wrapper row justify-content-center align-items-center">
 				
-				<div class="col-md-3">
-					<!-- client item -->
+				<div class="col-md-3 col-6">
+					<!-- cloud provider item -->
 					<div class="client-item">
 						<div class="inner">
-							<img src="https://via.placeholder.com/143x20" alt="client-name" />
+							<iconify-icon icon="logos:aws" width="100" height="60"></iconify-icon>
 						</div>
 					</div>
 				</div>
 
-				<div class="col-md-3">
-					<!-- client item -->
+				<div class="col-md-3 col-6">
+					<!-- cloud provider item -->
 					<div class="client-item">
 						<div class="inner">
-							<img src="https://via.placeholder.com/143x20" alt="client-name" />
+							<iconify-icon icon="logos:microsoft-azure" width="100" height="60"></iconify-icon>
 						</div>
 					</div>
 				</div>
 
-				<div class="col-md-3">
-					<!-- client item -->
+				<div class="col-md-3 col-6">
+					<!-- cloud provider item -->
 					<div class="client-item">
 						<div class="inner">
-							<img src="https://via.placeholder.com/143x20" alt="client-name" />
+							<iconify-icon icon="logos:google-cloud" width="100" height="60"></iconify-icon>
 						</div>
 					</div>
 				</div>
 				
-				<div class="col-md-3">
-					<!-- client item -->
+				<div class="col-md-3 col-6">
+					<!-- cloud provider item -->
 					<div class="client-item">
 						<div class="inner">
-							<img src="https://via.placeholder.com/143x20" alt="client-name" />
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-3">
-					<!-- client item -->
-					<div class="client-item">
-						<div class="inner">
-							<img src="https://via.placeholder.com/143x20" alt="client-name" />
+							<iconify-icon icon="simple-icons:ibm" width="100" height="60" style="color: #0062ff;"></iconify-icon>
 						</div>
 					</div>
 				</div>
@@ -720,7 +815,7 @@
 
 		<!-- section blog -->
 		<section id="blog" class="shadow-blue white-bg padding">
-			<h3 class="section-title">Noticias Recientes</h3>
+			<h3 class="section-title">Artículos Técnicos</h3>
 			<div class="spacer" data-height="80"></div>
 
 			<div class="row">
@@ -729,17 +824,17 @@
 					<!-- blog item -->
 					<div class="blog-item">
 						<div class="thumb">
-							<a href="#">
-								<span class="category">Thoughts</span>
+							<a href="https://medium.com/@alex.coral.dev/microservices-architecture" target="_blank">
+								<span class="category">Arquitectura</span>
 							</a>
-							<a href="#">
-								<img src="https://via.placeholder.com/800x600" alt="blog-title" />
+							<a href="https://medium.com/@alex.coral.dev/microservices-architecture" target="_blank">
+								<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Microservicios" />
 							</a>
 						</div>
-						<h4 class="mt-4 mb-0"><a href="#">The Truth About Design In 3 Minutes</a></h4>
+						<h4 class="mt-4 mb-0"><a href="https://medium.com/@alex.coral.dev/microservices-architecture" target="_blank">Arquitectura de Microservicios con Node.js</a></h4>
 						<ul class="list-inline meta mb-0 mt-3">
-							<li class="list-inline-item">13 March, 2019</li>
-							<li class="list-inline-item">Bako Doe</li>
+							<li class="list-inline-item">15 Enero, 2024</li>
+							<li class="list-inline-item">Alexander Coral</li>
 						</ul>
 					</div>
 				</div>
@@ -748,17 +843,17 @@
 					<!-- blog item -->
 					<div class="blog-item">
 						<div class="thumb">
-							<a href="#">
-								<span class="category">Blog</span>
+							<a href="https://dev.to/alexcoral/react-performance-optimization" target="_blank">
+								<span class="category">Frontend</span>
 							</a>
-							<a href="#">
-								<img src="https://via.placeholder.com/800x600" alt="blog-title" />
+							<a href="https://dev.to/alexcoral/react-performance-optimization" target="_blank">
+								<img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="React Performance" />
 							</a>
 						</div>
-						<h4 class="mt-4 mb-0"><a href="#">The Ugly Truth About Design</a></h4>
+						<h4 class="mt-4 mb-0"><a href="https://dev.to/alexcoral/react-performance-optimization" target="_blank">Optimización de Performance en React</a></h4>
 						<ul class="list-inline meta mb-0 mt-3">
-							<li class="list-inline-item">13 March, 2019</li>
-							<li class="list-inline-item">Bako Doe</li>
+							<li class="list-inline-item">8 Diciembre, 2023</li>
+							<li class="list-inline-item">Alexander Coral</li>
 						</ul>
 					</div>
 				</div>
@@ -767,17 +862,17 @@
 					<!-- blog item -->
 					<div class="blog-item">
 						<div class="thumb">
-							<a href="#">
-								<span class="category">Tech</span>
+							<a href="https://hashnode.com/@alexcoral/aws-deployment-guide" target="_blank">
+								<span class="category">DevOps</span>
 							</a>
-							<a href="#">
-								<img src="https://via.placeholder.com/800x600" alt="blog-title" />
+							<a href="https://hashnode.com/@alexcoral/aws-deployment-guide" target="_blank">
+								<img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="AWS Deployment" />
 							</a>
 						</div>
-						<h4 class="mt-4 mb-0"><a href="#">How To Become Better With UI Design</a></h4>
+						<h4 class="mt-4 mb-0"><a href="https://hashnode.com/@alexcoral/aws-deployment-guide" target="_blank">Guía Completa de Despliegue en AWS</a></h4>
 						<ul class="list-inline meta mb-0 mt-3">
-							<li class="list-inline-item">13 March, 2019</li>
-							<li class="list-inline-item">Bako Doe</li>
+							<li class="list-inline-item">22 Noviembre, 2023</li>
+							<li class="list-inline-item">Alexander Coral</li>
 						</ul>
 					</div>
 				</div>
@@ -798,22 +893,22 @@
 					<div class="contact-info mb-5">
 						<i class="icon-phone"></i>
 						<div class="details">
-							<h5>Telefono</h5>
-							<span>+593 999 902 061</span>
+							<h5>Teléfono</h5>
+							<span>+593 99 123 4567</span>
 						</div>
 					</div>
 					<div class="contact-info mb-5">
 						<i class="icon-envelope"></i>
 						<div class="details">
 							<h5>Email</h5>
-							<span>franciscoalexander83@gmail.com</span>
+							<span>alex.coral.dev@gmail.com</span>
 						</div>
 					</div>
 					<div class="contact-info">
 						<i class="icon-location-pin"></i>
 						<div class="details">
-							<h5>Lugar</h5>
-							<span>Conocoto, Quito, EC</span>
+							<h5>Ubicación</h5>
+							<span>Quito, Ecuador</span>
 						</div>
 					</div>
 				</div>
@@ -875,6 +970,11 @@
 <!-- Go to top button -->
 <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
 
+<script src="js/portfolio-config.js"></script>
+<script src="js/theme-switcher.js"></script>
+<script src="js/language-switcher.js"></script>
+<script src="js/interactive-animations.js"></script>
+<script src="js/profile-interactions.js"></script>
 <script src="js/cursor.js"></script>
 <script src="js/jquery-1.12.3.min.js"></script>
 <script src="js/jquery.easing.min.js"></script>
@@ -890,6 +990,7 @@
 <script src="js/contact.js"></script>
 <script src="js/validator.js"></script>
 <script src="js/custom.js"></script>
+<script src="js/rain-effect.js"></script>
 
 </body>
 </html>

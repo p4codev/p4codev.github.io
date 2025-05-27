@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo - Efectos de Lluvia y Nubes</title>
+    <link rel="stylesheet" href="css/rain-effect.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .demo-container {
+            text-align: center;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .theme-info {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+
+        [data-theme="dark"] body {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        }
+
+        [data-theme="dark"] .demo-container {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .weather-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #64b5f6;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="weather-icon">🌧️☁️</div>
+        <h1>Efectos Meteorológicos</h1>
+        <p>Demostración de los efectos de lluvia y nubes adaptativos. Los colores y la intensidad cambian automáticamente según el tema seleccionado.</p>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="raindrops">0</div>
+                <div class="stat-label">Gotas de Lluvia</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="clouds">0</div>
+                <div class="stat-label">Nubes Flotantes</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="theme">Claro</div>
+                <div class="stat-label">Tema Actual</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn" onclick="toggleTheme()">🌓 Cambiar Tema</button>
+            <button class="btn" onclick="increaseRain()">🌧️ Más Lluvia</button>
+            <button class="btn" onclick="decreaseRain()">☀️ Menos Lluvia</button>
+            <button class="btn" onclick="addClouds()">☁️ Más Nubes</button>
+            <button class="btn" onclick="goToPortfolio()">🏠 Ir al Portafolio</button>
+        </div>
+
+        <div class="theme-info">
+            <strong>Modo Claro:</strong> Lluvia más oscura, nubes blancas brillantes<br>
+            <strong>Modo Oscuro:</strong> Lluvia más clara, nubes grises sutiles
+        </div>
+    </div>
+
+    <script src="js/theme-switcher.js"></script>
+    <script src="js/rain-effect.js"></script>
+    <script>
+        // Funciones de control para la demo
+        function toggleTheme() {
+            if (window.themeSwitcher) {
+                window.themeSwitcher.toggleTheme();
+                updateThemeDisplay();
+            }
+        }
+
+        function increaseRain() {
+            if (window.rainEffect) {
+                window.rainEffect.options.intensity += 20;
+                window.rainEffect.stop();
+                window.rainEffect.start();
+                updateStats();
+            }
+        }
+
+        function decreaseRain() {
+            if (window.rainEffect && window.rainEffect.options.intensity > 20) {
+                window.rainEffect.options.intensity -= 20;
+                window.rainEffect.stop();
+                window.rainEffect.start();
+                updateStats();
+            }
+        }
+
+        function addClouds() {
+            if (window.rainEffect) {
+                window.rainEffect.options.cloudCount += 2;
+                // Agregar nuevas nubes inmediatamente
+                for (let i = 0; i < 2; i++) {
+                    const cloud = window.rainEffect.createCloud();
+                    window.rainEffect.cloudsContainer.appendChild(cloud);
+                    window.rainEffect.clouds.push(cloud);
+                }
+                updateStats();
+            }
+        }
+
+        function goToPortfolio() {
+            window.location.href = 'index.html';
+        }
+
+        function updateStats() {
+            if (window.rainEffect) {
+                document.getElementById('raindrops').textContent = window.rainEffect.options.intensity;
+                document.getElementById('clouds').textContent = window.rainEffect.options.cloudCount;
+            }
+        }
+
+        function updateThemeDisplay() {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            document.getElementById('theme').textContent = currentTheme === 'dark' ? 'Oscuro' : 'Claro';
+        }
+
+        // Actualizar estadísticas cada segundo
+        setInterval(updateStats, 1000);
+        setInterval(updateThemeDisplay, 500);
+
+        // Inicializar estadísticas
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                updateStats();
+                updateThemeDisplay();
+            }, 1000);
+        });
+
+        // Efectos adicionales para la demo
+        document.addEventListener('mousemove', (e) => {
+            const cursor = document.createElement('div');
+            cursor.style.cssText = `
+                position: fixed;
+                left: ${e.clientX}px;
+                top: ${e.clientY}px;
+                width: 4px;
+                height: 4px;
+                background: rgba(255, 255, 255, 0.6);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9999;
+                animation: fade-out 1s ease-out forwards;
+            `;
+            document.body.appendChild(cursor);
+            
+            setTimeout(() => cursor.remove(), 1000);
+        });
+
+        // Agregar animación de fade-out
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fade-out {
+                0% { opacity: 1; transform: scale(1); }
+                100% { opacity: 0; transform: scale(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html> 
