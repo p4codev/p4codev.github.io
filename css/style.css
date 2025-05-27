@@ -233,7 +233,7 @@ header.left {
   transition: all 0.3s ease-in-out;
 }
 header.left nav {
-  margin-top: 40px;
+  margin-top: 5px;
 }
 header.left .header-inner {
   width: 100%;

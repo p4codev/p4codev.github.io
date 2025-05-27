@@ -741,8 +741,10 @@
 
 /* Personalización del color de las tarjetas en modo claro */
 :root {
-    --card-bg: #CCCCCC!important;
-    --header-bg: #CCCCCC !important;
+    --card-bg: #D4D4D4 !important;
+    --header-bg: #D4D4D4 !important;
+    --switch-height: 24px;
+    --switch-padding: 5px;
 }
 
 /* Aplicar el color a todos los elementos con fondo blanco en modo claro */
@@ -780,4 +782,75 @@
 /* Asegurar que el menú móvil también tiene el mismo color */
 .mobile-header {
     background-color: var(--card-bg) !important;
+}
+
+/* Contenedor para switch de tema y selector de idioma */
+.theme-language-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 15px 0;
+    padding: 5px 0;
+}
+
+/* Ajustes para el switch de tema */
+.theme-switch-wrapper {
+    margin: 0;
+    flex: 1;
+    height: var(--switch-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ajustes para el selector de idioma */
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex: 1;
+    justify-content: flex-end;
+    background: var(--border-color);
+    border-radius: 24px;
+    height: var(--switch-height);
+    padding: 2px;
+    box-shadow: inset 0 2px 4px var(--shadow-color);
+}
+
+/* Estilo de los botones de idioma */
+.language-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 0 10px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+    height: calc(var(--switch-height) - 4px);
+    min-width: calc(var(--switch-height) * 1.5);
+}
+
+.language-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.language-btn.active {
+    background: var(--accent-color);
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes para los iconos de banderas */
+.flag {
+    font-size: 14px;
+}
+
+.lang-text {
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 2px;
 } 
