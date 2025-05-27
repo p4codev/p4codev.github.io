@@ -1403,6 +1403,7 @@ section.padding-60 {
 /*=================================================================*/
 .social-icons li:not(:last-child) {
   margin-right: 0.1rem;
+  
 }
 .social-icons li a {
   color: #FFF;

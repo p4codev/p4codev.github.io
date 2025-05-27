@@ -853,4 +853,41 @@
     font-size: 12px;
     font-weight: 500;
     margin-left: 2px;
+}
+
+/* Personalización de los iconos de redes sociales */
+.social-icons {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+}
+
+.social-icons li {
+    margin: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.social-icons li a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 26px !important;
+    height: 26px !important;
+    line-height: 1 !important;
+    border-radius: 50% !important;
+    transition: all 0.3s ease !important;
+}
+
+.social-icons li a i {
+    font-size: 12px !important;
+    line-height: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 } 
