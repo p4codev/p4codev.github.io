@@ -1402,11 +1402,11 @@ section.padding-60 {
 /*                      THEME ELEMENTS
 /*=================================================================*/
 .social-icons li:not(:last-child) {
-  margin-right: 0.3rem;
+  margin-right: 0.1rem;
 }
 .social-icons li a {
   color: #FFF;
-  background: #FF7F11;
+  background: #195C78;
   border-radius: 50%;
   display: block;
   height: 30px;

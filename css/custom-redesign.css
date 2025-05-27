@@ -737,4 +737,47 @@
 
 .client-item .inner {
     padding: 20px;
+}
+
+/* Personalización del color de las tarjetas en modo claro */
+:root {
+    --card-bg: #CCCCCC!important;
+    --header-bg: #CCCCCC !important;
+}
+
+/* Aplicar el color a todos los elementos con fondo blanco en modo claro */
+.white-bg,
+.service-item,
+.testimonial-item,
+.blog-item,
+.portfolio-item,
+.certification-card,
+.contact-info,
+.timeline .entry .body,
+#header {
+    background-color: var(--card-bg) !important;
+}
+
+/* Asegurar que el color se mantiene en hover states */
+.service-item:hover,
+.portfolio-item:hover {
+    background-color: var(--card-bg) !important;
+}
+
+/* Mantener el contraste del texto */
+.white-bg *,
+.service-item *,
+.testimonial-item *,
+.blog-item *,
+.portfolio-item *,
+.certification-card *,
+.contact-info *,
+.timeline .entry .body *,
+#header * {
+    color: inherit;
+}
+
+/* Asegurar que el menú móvil también tiene el mismo color */
+.mobile-header {
+    background-color: var(--card-bg) !important;
 } 
