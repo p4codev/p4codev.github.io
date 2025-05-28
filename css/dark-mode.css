@@ -300,7 +300,7 @@ body {
 
 /* Botones mejorados */
 .btn-default {
-    background: var(--gradient-primary);
+    background: #cd760b;
     border: none;
     color: #ffffff;
     transition: all 0.3s ease;
@@ -308,21 +308,22 @@ body {
 }
 
 .btn-default:hover {
-    background: var(--gradient-secondary);
+    background: #6004a6;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
     color: #ffffff;
 }
 
 .btn-border-light {
-    border: 2px solid var(--accent-color);
-    color: var(--accent-color);
-    background: transparent;
+    border: 2px solid #cd760b;
+    color: #cd760b;
+    background: #ffffff;
     transition: all 0.3s ease;
 }
 
 .btn-border-light:hover {
-    background: var(--accent-color);
+    border: 2px solid #fff;
+    background: #6004a6;
     color: #ffffff;
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
