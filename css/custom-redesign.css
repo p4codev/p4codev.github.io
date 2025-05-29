@@ -41,18 +41,14 @@
 
 /* ===== 3. CREATIVE SKILLS DESIGN ===== */
 .skill-item {
-    background: var(--bg-secondary);
-    padding: 30px;
+    background: linear-gradient(145deg, var(--card-bg) 0%, rgba(212, 212, 212, 0.8) 100%);
     border-radius: 15px;
-    box-shadow: var(--shadow-md);
+    padding: 25px;
+    margin-bottom: 30px;
     transition: all 0.3s ease;
+    border: 1px solid #4da1a9;
     position: relative;
     overflow: hidden;
-}
-
-.skill-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
 }
 
 .skill-item::before {
@@ -60,65 +56,94 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent-color) 0%, var(--accent-hover) 100%);
-    transform: translateX(-100%);
-    transition: transform 0.6s ease;
+    width: 4px;
+    height: 100%;
+    background: #4da1a9;
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .skill-item:hover::before {
-    transform: translateX(0);
+    width: 6px;
+}
+
+.skill-info {
+    position: relative;
+    z-index: 1;
 }
 
 .skill-info h4 {
     color: var(--text-primary);
+    font-size: 1.25rem;
+    margin-bottom: 10px;
     font-weight: 600;
 }
 
 .skill-info label {
     display: block;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--text-tertiary);
-    margin: 5px 0 15px;
+    margin-bottom: 15px;
+    line-height: 1.5;
 }
 
 .skill-info span {
-    background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-hover) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
-    font-size: 1.2rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #4da1a9;
 }
 
 .progress {
     height: 8px;
-    background-color: var(--gray-200);
+    background-color: rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: visible;
     position: relative;
+    margin-bottom: 10px;
 }
 
 .progress-bar {
-    background: linear-gradient(90deg, var(--accent-color) 0%, var(--accent-hover) 100%);
+    background: linear-gradient(to right, #4da1a9, #cd760b);
     border-radius: 10px;
     position: relative;
-    overflow: visible;
-    transition: width 1.5s ease;
+    transition: width 1.5s cubic-bezier(0.1, 0.45, 0.1, 1);
 }
 
 .progress-bar::after {
     content: '';
     position: absolute;
-    right: 0;
+    right: -4px;
     top: 50%;
     transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    background: var(--bg-primary);
-    border: 3px solid var(--accent-hover);
+    width: 12px;
+    height: 12px;
+    background: #cd760b;
     border-radius: 50%;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Animación al hacer hover */
+.skill-item:hover .progress-bar {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 /* Dark mode skills */
@@ -143,62 +168,453 @@
     background-color: var(--gray-200);
 }
 
-/* ===== 4. FACTS SECTION ICONS ===== */
-.fact-item i {
-    font-size: 3rem;
+/* ===== 4. FACTS SECTION ICONS ===== 
+#facts {
+    background: #4da1a9 !important;
+    position: relative;
+    overflow: hidden;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M50 0c27.614 0 50 22.386 50 50s-22.386 50-50 50S0 77.614 0 50 22.386 0 50 0zm0 10c22.091 0 40 17.909 40 40S72.091 90 50 90 10 72.091 10 50s17.909-40 40-40z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+#facts::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(77, 161, 169, 0.95) 0%, rgba(77, 161, 169, 0.85) 100%);
+    z-index: 1;
+}*/
+
+.fact-item {
+    text-align: center;
+    padding: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    min-height: 200px;
+}
+
+.fact-item .icon-circle {
+    width: 70px;
+    height: 70px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #cd760b;
+    border-radius: 50%;
     margin-bottom: 20px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 28px;
+    color: #fff;
+    transition: all 0.3s ease;
+    position: relative;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.fact-item:hover .icon-circle {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .fact-item h2 {
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 800;
     margin: 15px 0 10px;
+    background: linear-gradient(135deg, #ffffff 0%, #e6e6e6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+    line-height: 1;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.fact-item:hover h2 {
+    transform: scale(1.1);
 }
 
 .fact-item span {
     font-size: 1rem;
+    color: #ffffff;
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    line-height: 1.4;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: normal;
+    max-width: 140px;
+    margin: 15px auto 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Decoración adicional */
+.fact-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+/* Ajuste responsive */
+@media (max-width: 768px) {
+    .fact-item {
+        min-height: 180px;
+    }
+
+    .fact-item span {
+        font-size: 0.9rem;
+        min-height: 40px;
+        max-width: 120px;
+    }
+    
+    .fact-item h2 {
+        font-size: 2rem;
+    }
+
+    .fact-item .icon-circle {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+}
+
+/* Animación de los números */
+.count {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Mantener los estilos existentes */
+/* Personalización del color de las tarjetas en modo claro */
+:root {
+    --card-bg: #D4D4D4 !important;
+    --header-bg: #D4D4D4 !important;
+    --switch-height: 24px;
+    --switch-padding: 5px;
+}
+
+/* Aplicar el color a todos los elementos con fondo blanco en modo claro */
+.white-bg,
+.service-item,
+.testimonial-item,
+.blog-item,
+.portfolio-item,
+.certification-card,
+.contact-info,
+.timeline .entry .body,
+#header {
+    background-color: var(--card-bg) !important;
+}
+
+/* Asegurar que el color se mantiene en hover states */
+.service-item:hover,
+.portfolio-item:hover {
+    background-color: var(--card-bg) !important;
+}
+
+/* Mantener el contraste del texto */
+.white-bg *,
+.service-item *,
+.testimonial-item *,
+.blog-item *,
+.portfolio-item *,
+.certification-card *,
+.contact-info *,
+.timeline .entry .body *,
+#header * {
+    color: inherit;
+}
+
+/* Asegurar que el menú móvil también tiene el mismo color */
+.mobile-header {
+    background-color: var(--card-bg) !important;
+}
+
+/* Contenedor para switch de tema y selector de idioma */
+.theme-language-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 15px 0;
+    padding: 5px 0;
+}
+
+/* Ajustes para el switch de tema */
+.theme-switch-wrapper {
+    margin: 0;
+    flex: 1;
+    height: var(--switch-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ajustes para el selector de idioma */
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex: 1;
+    justify-content: flex-end;
+    background: var(--border-color);
+    border-radius: 24px;
+    height: var(--switch-height);
+    padding: 2px;
+    box-shadow: inset 0 2px 4px var(--shadow-color);
+}
+
+/* Estilo de los botones de idioma */
+.language-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 0 10px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+    height: calc(var(--switch-height) - 4px);
+    min-width: calc(var(--switch-height) * 1.5);
+}
+
+.language-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.language-btn.active {
+    background: var(--accent-color);
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes para los iconos de banderas */
+.flag {
+    font-size: 14px;
+}
+
+.lang-text {
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 2px;
+}
+
+/* Personalización de los iconos de redes sociales */
+.social-icons {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+}
+
+.social-icons li {
+    margin: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.social-icons li a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 26px !important;
+    height: 26px !important;
+    line-height: 1 !important;
+    border-radius: 50% !important;
+    transition: all 0.3s ease !important;
+}
+
+.social-icons li a i {
+    font-size: 12px !important;
+    line-height: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Estilos para la sección de certificaciones */
+.section-sub-title h4 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+.section-sub-title h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--accent-color);
+}
+
+.certification-card {
+    border: 1px solid var(--border-color);
+}
+
+.certification-card.course-card {
+    background: linear-gradient(145deg, var(--card-bg) 0%, rgba(212, 212, 212, 0.8) 100%);
+}
+
+.certification-card.course-card .cert-badge {
+    background: var(--accent-color);
     opacity: 0.9;
 }
 
 /* ===== 5. SERVICES SECTION REDESIGN ===== */
 .service-item {
+    background: linear-gradient(145deg, var(--card-bg) 0%, rgba(212, 212, 212, 0.8) 100%);
     padding: 40px 30px;
-    background: var(--bg-primary);
-    border-radius: 15px;
-    box-shadow: var(--shadow-md);
-    transition: all 0.3s ease;
-    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.service-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #4da1a9 0%, #cd760b 100%);
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 1;
 }
 
 .service-item:hover {
     transform: translateY(-10px);
-    box-shadow: var(--shadow-xl);
-    border-color: var(--accent-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: rgba(77, 161, 169, 0.3);
 }
 
-.service-item i {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: var(--accent-color);
-    transition: all 0.3s ease;
+.service-item:hover::before {
+    opacity: 0.05;
 }
 
-.service-item:hover i {
-    transform: scale(1.1);
-    color: var(--accent-hover);
+.service-item .icon-simple {
+    position: relative;
+    z-index: 2;
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+    display: inline-block;
+    color: #4da1a9;
+    transition: all 0.4s ease;
+}
+
+.service-item:hover .icon-simple {
+    transform: scale(1.1) translateY(-5px);
+    color: #cd760b;
 }
 
 .service-item h4 {
+    position: relative;
+    z-index: 2;
     color: var(--text-primary);
-    font-weight: 600;
-    transition: color 0.3s ease;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
 }
 
 .service-item:hover h4 {
-    color: var(--accent-color);
+    color: #4da1a9;
+}
+
+.service-item p {
+    position: relative;
+    z-index: 2;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Decoración adicional */
+.service-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: linear-gradient(to right, #4da1a9, #cd760b);
+    transition: all 0.4s ease;
+}
+
+.service-item:hover::after {
+    width: 80%;
+}
+
+/* Efecto de brillo en hover */
+.service-item .shine {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(45deg);
+    transition: all 0.4s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.service-item:hover .shine {
+    transform: rotate(45deg) translateY(-100%);
+}
+
+/* Ajuste responsive */
+@media (max-width: 768px) {
+    .service-item {
+        padding: 30px 20px;
+    }
+
+    .service-item .icon-simple {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .service-item h4 {
+        font-size: 1.2rem;
+    }
+
+    .service-item p {
+        font-size: 0.9rem;
+    }
 }
 
 /* Remove neon glow */
@@ -737,187 +1153,4 @@
 
 .client-item .inner {
     padding: 20px;
-}
-
-/* Personalización del color de las tarjetas en modo claro */
-:root {
-    --card-bg: #D4D4D4 !important;
-    --header-bg: #D4D4D4 !important;
-    --switch-height: 24px;
-    --switch-padding: 5px;
-}
-
-/* Aplicar el color a todos los elementos con fondo blanco en modo claro */
-.white-bg,
-.service-item,
-.testimonial-item,
-.blog-item,
-.portfolio-item,
-.certification-card,
-.contact-info,
-.timeline .entry .body,
-#header {
-    background-color: var(--card-bg) !important;
-}
-
-/* Asegurar que el color se mantiene en hover states */
-.service-item:hover,
-.portfolio-item:hover {
-    background-color: var(--card-bg) !important;
-}
-
-/* Mantener el contraste del texto */
-.white-bg *,
-.service-item *,
-.testimonial-item *,
-.blog-item *,
-.portfolio-item *,
-.certification-card *,
-.contact-info *,
-.timeline .entry .body *,
-#header * {
-    color: inherit;
-}
-
-/* Asegurar que el menú móvil también tiene el mismo color */
-.mobile-header {
-    background-color: var(--card-bg) !important;
-}
-
-/* Contenedor para switch de tema y selector de idioma */
-.theme-language-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    margin: 15px 0;
-    padding: 5px 0;
-}
-
-/* Ajustes para el switch de tema */
-.theme-switch-wrapper {
-    margin: 0;
-    flex: 1;
-    height: var(--switch-height);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Ajustes para el selector de idioma */
-.language-selector {
-    display: flex;
-    align-items: center;
-    gap: 0;
-    flex: 1;
-    justify-content: flex-end;
-    background: var(--border-color);
-    border-radius: 24px;
-    height: var(--switch-height);
-    padding: 2px;
-    box-shadow: inset 0 2px 4px var(--shadow-color);
-}
-
-/* Estilo de los botones de idioma */
-.language-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    padding: 0 10px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 20px;
-    height: calc(var(--switch-height) - 4px);
-    min-width: calc(var(--switch-height) * 1.5);
-}
-
-.language-btn:hover {
-    background: rgba(0, 0, 0, 0.1);
-}
-
-.language-btn.active {
-    background: var(--accent-color);
-    color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* Ajustes para los iconos de banderas */
-.flag {
-    font-size: 14px;
-}
-
-.lang-text {
-    font-size: 12px;
-    font-weight: 500;
-    margin-left: 2px;
-}
-
-/* Personalización de los iconos de redes sociales */
-.social-icons {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 8px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-}
-
-.social-icons li {
-    margin: 0 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-.social-icons li a {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 26px !important;
-    height: 26px !important;
-    line-height: 1 !important;
-    border-radius: 50% !important;
-    transition: all 0.3s ease !important;
-}
-
-.social-icons li a i {
-    font-size: 12px !important;
-    line-height: 1 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-/* Estilos para la sección de certificaciones */
-.section-sub-title h4 {
-    position: relative;
-    display: inline-block;
-    padding-bottom: 8px;
-}
-
-.section-sub-title h4::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 40px;
-    height: 2px;
-    background: var(--accent-color);
-}
-
-.certification-card {
-    border: 1px solid var(--border-color);
-}
-
-.certification-card.course-card {
-    background: linear-gradient(145deg, var(--card-bg) 0%, rgba(212, 212, 212, 0.8) 100%);
-}
-
-.certification-card.course-card .cert-badge {
-    background: var(--accent-color);
-    opacity: 0.9;
 } 
