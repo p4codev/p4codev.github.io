@@ -71,43 +71,6 @@ portafolio/
 ├── index.html             # Página principal
 └── README.md              # Documentación
 ```
-
-## 🚀 Instalación y Uso
-
-### Clonar el Repositorio
-```bash
-git clone https://github.com/p4codev/p4codev.github.io.git
-cd p4codev.github.io
-```
-
-### Servidor Local
-```bash
-# Con Python
-python -m http.server 8000
-
-# Con Node.js
-npx serve .
-
-# Con PHP
-php -S localhost:8000
-```
-
-### Acceder al Portafolio
-Abrir en el navegador: `http://localhost:8000`
-
-## 🎨 Personalización
-
-### Cambiar Colores del Tema
-Editar las variables CSS en `css/dark-mode.css`:
-
-```css
-:root {
-    --accent-color: #tu-color-primario;
-    --bg-color: #tu-color-de-fondo;
-    /* ... más variables */
-}
-```
-
 ### Modificar Efectos de Lluvia
 Ajustar parámetros en `js/rain-effect.js`:
 
