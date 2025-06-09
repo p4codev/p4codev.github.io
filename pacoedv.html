@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Restaurante Sabor Único</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: #fff8f0;
+            color: #333;
+        }
+        header {
+            background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px 60px 20px;
+        }
+        header h1 {
+            font-size: 3em;
+            margin: 0 0 10px 0;
+            letter-spacing: 2px;
+        }
+        header p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+        .btn {
+            background: #e67e22;
+            color: #fff;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1em;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #cf711f;
+        }
+        section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .feature {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            padding: 30px 20px;
+            flex: 1 1 250px;
+            min-width: 250px;
+            max-width: 300px;
+            text-align: center;
+        }
+        .feature img {
+            width: 60px;
+            margin-bottom: 15px;
+        }
+        .menu-preview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .menu-item {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+            padding: 20px;
+            width: 220px;
+            text-align: center;
+        }
+        .menu-item img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        footer {
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 30px 10px;
+            margin-top: 50px;
+        }
+        @media (max-width: 700px) {
+            .features, .menu-preview {
+                flex-direction: column;
+                align-items: center;
+            }
+            header {
+                padding: 60px 10px 40px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sabor Único</h1>
+        <p>Descubre una experiencia gastronómica inolvidable con los mejores sabores de la cocina internacional.</p>
+        <a href="#reserva" class="btn">Reserva tu mesa</a>
+    </header>
+
+    <section>
+        <h2>¿Por qué elegirnos?</h2>
+        <div class="features">
+            <div class="feature">
+                <img src="https://img.icons8.com/ios-filled/100/000000/chef-hat.png" alt="Chef">
+                <h3>Chefs Expertos</h3>
+                <p>Platos preparados por chefs galardonados con ingredientes frescos y de calidad.</p>
+            </div>
+            <div class="feature">
+                <img src="https://img.icons8.com/ios-filled/100/000000/restaurant-table.png" alt="Ambiente">
+                <h3>Ambiente Acogedor</h3>
+                <p>Un espacio elegante y cómodo para disfrutar con familia, amigos o pareja.</p>
+            </div>
+            <div class="feature">
+                <img src="https://img.icons8.com/ios-filled/100/000000/organic-food.png" alt="Comida">
+                <h3>Menú Variado</h3>
+                <p>Opciones para todos los gustos: carnes, pescados, vegetarianos y postres exquisitos.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Nuestro Menú Destacado</h2>
+        <div class="menu-preview">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1516685018646-5499d0a7d42f?auto=format&fit=crop&w=400&q=80" alt="Plato 1">
+                <h4>Risotto de Mariscos</h4>
+                <p>Cremoso arroz con mariscos frescos y toque de azafrán.</p>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80" alt="Plato 2">
+                <h4>Ensalada Mediterránea</h4>
+                <p>Fresca mezcla de vegetales, queso feta y aceitunas.</p>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80" alt="Plato 3">
+                <h4>Filete a la Parrilla</h4>
+                <p>Jugoso filete de res acompañado de papas rústicas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="reserva">
+        <h2>Reserva tu mesa</h2>
+        <form style="max-width:400px;margin:30px auto 0 auto;background:#fff;padding:25px;border-radius:10px;box-shadow:0 1px 6px rgba(0,0,0,0.07);">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre" required style="width:100%;padding:8px;margin:8px 0 16px 0;"><br>
+            <label for="personas">Personas:</label><br>
+            <input type="number" id="personas" name="personas" min="1" max="20" required style="width:100%;padding:8px;margin:8px 0 16px 0;"><br>
+            <label for="fecha">Fecha:</label><br>
+            <input type="date" id="fecha" name="fecha" required style="width:100%;padding:8px;margin:8px 0 16px 0;"><br>
+            <button type="submit" class="btn" style="width:100%;">Reservar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sabor Único. Todos los derechos reservados.</p>
+        <p>Dirección: Calle Gourmet 123, Ciudad Gastronómica | Tel: (123) 456-7890</p>
+    </footer>
+</body>
+</html>
