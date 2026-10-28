@@ -7,12 +7,12 @@ const PortfolioConfig = {
     // Información personal
     personal: {
         name: "Alexander Coral",
-        title: "Ingeniero de Software Full Stack",
-        email: "alex.coral.dev@gmail.com",
-        phone: "+593 99 123 4567",
+        title: "Solutions Architect · AI & Data Engineer",
+        email: "francisco-coral@outlook.com",
+        phone: "+593 99 990 2061",
         location: "Quito, Ecuador",
         website: "https://p4codev.github.io",
-        profileImage: "/images/Foto-Perfil.png"
+        profileImage: "images/Foto-Perfil.png"
     },
 
     // Redes sociales
@@ -21,7 +21,8 @@ const PortfolioConfig = {
         linkedin: "https://www.linkedin.com/in/pacodev/",
         twitter: "https://x.com/PacoDev",
         facebook: "https://www.facebook.com/p4codev",
-        stackoverflow: "https://stackoverflow.com/users/16920816/pacodev"
+        stackoverflow: "https://stackoverflow.com/users/16920816/pacodev",
+        devto: "https://dev.to/pacodev"
     },
 
     // Configuración de efectos visuales

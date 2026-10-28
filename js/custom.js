@@ -8,7 +8,7 @@ $(window).on("load",function(){
     /*=========================================================================
         Custom Scrollbar
     =========================================================================*/
-    $(".header-inner").mCustomScrollbar();
+    // Scroll nativo en el header (ver css/fixes.css)
 
     /*=========================================================================
      Isotope
@@ -38,60 +38,6 @@ $(window).on("load",function(){
               columnWidth: '[class*="col-"]'
           }
       });
-    });
-
-    /*=========================================================================
-     Infinite Scroll
-     =========================================================================*/
-    var curPage = 1;
-    var pagesNum = $(".portfolio-pagination").find("li a:last").text();   // Number of pages
-
-    $container.infinitescroll({
-        itemSelector: '.grid-item',
-        nextSelector: '.portfolio-pagination li a',
-        navSelector: '.portfolio-pagination',
-        extraScrollPx: 0,
-        bufferPx: 0,
-        maxPage: 6,
-        loading: {
-            finishedMsg: "No more works",
-            msgText: '',
-            speed: 'slow',
-            selector: '.load-more',
-        },
-    },
-    // trigger Masonry as a callback
-    function( newElements ) {
-
-      var $newElems = $( newElements );
-      $newElems.imagesLoaded(function(){  
-        $newElems.animate({ opacity: 1 });
-        $container.isotope( 'appended', $newElems );
-      });
-
-      // Check last page
-      curPage++;
-      if(curPage == pagesNum) {
-        $( '.load-more' ).remove();
-      }
-
-    });
-
-    $container.infinitescroll( 'unbind' );
-
-    $( '.load-more .btn' ).on('click', function() {
-      $container.infinitescroll( 'retrieve' );
-      // display loading icon
-      $( '.load-more .btn i' ).css('display', 'inline-block');
-      $( '.load-more .btn i' ).addClass('fa-spin');
-
-      $(document).ajaxStop(function () {
-        setTimeout(function(){
-               // hide loading icon
-          $( '.load-more .btn i' ).hide();
-        }, 1000);
-      });
-      return false;
     });
 
     /* ======= Mobile Filter ======= */
@@ -186,6 +132,28 @@ $(function(){
     });
 
     /*=========================================================================
+     Hero con la misma altura que el menú lateral (escritorio)
+     =========================================================================*/
+    function syncHeroHeight() {
+      var header = document.getElementById('header');
+      var hero = document.getElementById('home');
+      if (!header || !hero) { return; }
+      if (window.innerWidth >= 992) {
+        hero.style.height = header.offsetHeight + 'px';
+      } else {
+        hero.style.height = '';
+      }
+    }
+    syncHeroHeight();
+    $(window).on('load resize', syncHeroHeight);
+    window.addEventListener('languageChanged', function () { setTimeout(syncHeroHeight, 50); });
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(syncHeroHeight); }
+    if (window.ResizeObserver) {
+      var headerEl = document.getElementById('header');
+      if (headerEl) { new ResizeObserver(syncHeroHeight).observe(headerEl); }
+    }
+
+    /*=========================================================================
      Counterup JS for facts
      =========================================================================*/
     $('.count').counterUp({
@@ -221,6 +189,8 @@ $(function(){
         scrollTop: $($anchor.attr('href')).offset().top-50
       }, 800, 'easeInOutQuad');
       event.preventDefault();
+      $('header.left').removeClass('open');
+      $('.mobile-header, main.content').removeClass('push');
     });
 
     /*=========================================================================
@@ -240,7 +210,7 @@ $(function(){
 
     for (var i = 0; i < bg_img.length; i++) {
       var src = bg_img[i].getAttribute('data-image-src');
-      bg_img[i].style.backgroundImage="url('" + src + "')";
+      if (src) { bg_img[i].style.backgroundImage="url('" + src + "')"; }
     }
 
     /*=========================================================================

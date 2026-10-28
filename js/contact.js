@@ -1,46 +1,43 @@
+/**
+ * Formulario de contacto (GitHub Pages no ejecuta PHP).
+ * Valida con bootstrap-validator y abre el cliente de correo con el mensaje
+ * ya redactado (mailto:). No depende de ningún servicio externo.
+ */
 $(function () {
     "use strict";
 
-    // init the validator
-    // validator files are included in the download package
-    // otherwise download from http://1000hz.github.io/bootstrap-validator
+    var CONTACT_EMAIL = "francisco-coral@outlook.com";
 
-    $('#contact-form').validator();
+    var $form = $('#contact-form');
+    $form.addClass('pristine').validator({ delay: 700, disable: false });
+    // El plugin marca los campos vacíos al iniciar: limpiar hasta que el usuario escriba
+    $form.find('.form-group').removeClass('has-error').find('.help-block').empty();
+    $form.one('input change focusout', 'input, textarea', function () { $form.removeClass('pristine'); });
 
-
-    // when the form is submitted
     $('#contact-form').on('submit', function (e) {
+        e.preventDefault();
+        $form.removeClass('pristine');
+        if ($(this).find('.has-error').length) { return false; }
 
-        // if the validator does not prevent form submit
-        if (!e.isDefaultPrevented()) {
-            var url = "form/contact.php";
+        var name = $('#InputName').val().trim();
+        var email = $('#InputEmail').val().trim();
+        var subject = $('#InputSubject').val().trim();
+        var message = $('#InputMessage').val().trim();
+        if (!name || !email || !subject || !message) { return false; }
 
-            // POST values in the background the the script URL
-            $.ajax({
-                type: "POST",
-                url: url,
-                data: $(this).serialize(),
-                success: function (data)
-                {
-                    // data = JSON object that contact.php returns
+        var body = message + "\n\n— " + name + " (" + email + ")";
+        var href = "mailto:" + CONTACT_EMAIL +
+            "?subject=" + encodeURIComponent("[Portafolio] " + subject) +
+            "&body=" + encodeURIComponent(body);
 
-                    // we recieve the type of the message: success x danger and apply it to the 
-                    var messageAlert = 'alert-' + data.type;
-                    var messageText = data.message;
+        window.location.href = href;
 
-                    // let's compose Bootstrap alert box HTML
-                    var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
-                    
-                    // If we have messageAlert and messageText
-                    if (messageAlert && messageText) {
-                        // inject the alert to .messages div in our form
-                        $('#contact-form').find('.messages').html(alertBox);
-                        // empty the form
-                        $('#contact-form')[0].reset();
-                    }
-                }
-            });
-            return false;
-        }
-    })
+        var lang = (window.languageSwitcher && window.languageSwitcher.getCurrentLanguage()) || 'es';
+        var text = lang === 'en'
+            ? 'Your email client should open with the message ready to send. If it does not, write to ' + CONTACT_EMAIL + '.'
+            : 'Se abrirá tu cliente de correo con el mensaje listo para enviar. Si no se abre, escríbeme a ' + CONTACT_EMAIL + '.';
+        var alertBox = '<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + text + '</div>';
+        $('#contact-form').find('.messages').html(alertBox);
+        return false;
+    });
 });
